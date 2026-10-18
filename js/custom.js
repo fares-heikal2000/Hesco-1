@@ -135,3 +135,199 @@ btn.addEventListener("click", function (e) {
      message => alert(message)
     );
 })
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Initialize every partners section independently
+    const sections = document.querySelectorAll(".success-partners");
+
+    sections.forEach(function (section) {
+
+        const track = section.querySelector(".partners-track");
+        const prevButton = section.querySelector(".partners-prev");
+        const nextButton = section.querySelector(".partners-next");
+        const dotsContainer = section.querySelector(".partners-dots");
+        const carousel = section.querySelector(".partners-carousel");
+
+        // Prevent errors if a section is missing required elements
+        if (!track || !prevButton || !nextButton || !dotsContainer || !carousel) {
+            return;
+        }
+
+        const originalCards = Array.from(
+            track.querySelectorAll(".partner-card")
+        );
+
+        const totalPartners = originalCards.length;
+
+        if (totalPartners === 0) return;
+
+        let currentIndex = 0;
+        let autoSlide = null;
+        let isTransitioning = false;
+
+        // Clone the first 5 cards for continuous movement
+        const cloneCount = Math.min(5, totalPartners);
+
+        originalCards.slice(0, cloneCount).forEach(function (card) {
+            const clone = card.cloneNode(true);
+            clone.setAttribute("aria-hidden", "true");
+            track.appendChild(clone);
+        });
+
+        // Calculate one card's movement distance
+        function getSlideSize() {
+            const card = track.querySelector(".partner-card");
+
+            if (!card) return 0;
+
+            const cardWidth = card.getBoundingClientRect().width;
+            const trackStyle = window.getComputedStyle(track);
+            const gap = parseFloat(trackStyle.columnGap) ||
+                        parseFloat(trackStyle.gap) || 0;
+
+            return cardWidth + gap;
+        }
+
+        // Move this section's carousel
+        function moveCarousel(animate = true) {
+            const slideSize = getSlideSize();
+
+            if (!slideSize) return;
+
+            track.style.transition = animate
+                ? "transform 0.7s ease"
+                : "none";
+
+            track.style.transform =
+                `translateX(-${currentIndex * slideSize}px)`;
+
+            updateDots();
+        }
+
+        // Create navigation dots for original cards only
+        dotsContainer.innerHTML = "";
+
+        originalCards.forEach(function (_, index) {
+            const dot = document.createElement("button");
+
+            dot.type = "button";
+            dot.classList.add("partner-dot");
+            dot.setAttribute(
+                "aria-label",
+                "Go to partner " + (index + 1)
+            );
+
+            dot.addEventListener("click", function () {
+                currentIndex = index;
+                isTransitioning = false;
+                moveCarousel(true);
+                restartAutoSlide();
+            });
+
+            dotsContainer.appendChild(dot);
+        });
+
+        function updateDots() {
+            const dots = dotsContainer.querySelectorAll(".partner-dot");
+            const activeIndex = currentIndex % totalPartners;
+
+            dots.forEach(function (dot, index) {
+                dot.classList.toggle("active", index === activeIndex);
+            });
+        }
+
+        // Next slide
+        function nextSlide() {
+            if (isTransitioning) return;
+
+            isTransitioning = true;
+            currentIndex++;
+
+            moveCarousel(true);
+        }
+
+        // Previous slide
+        function previousSlide() {
+            if (isTransitioning) return;
+
+            if (currentIndex <= 0) {
+                // Jump to the matching cloned position without animation
+                currentIndex = totalPartners;
+                moveCarousel(false);
+
+                // Force the browser to apply the reset before moving
+                track.offsetHeight;
+
+                currentIndex--;
+                isTransitioning = true;
+                moveCarousel(true);
+            } else {
+                currentIndex--;
+                isTransitioning = true;
+                moveCarousel(true);
+            }
+        }
+
+        // Handle the end of an animated movement
+        track.addEventListener("transitionend", function (event) {
+            if (event.propertyName !== "transform") return;
+
+            if (currentIndex >= totalPartners) {
+                currentIndex = 0;
+                moveCarousel(false);
+            }
+
+            isTransitioning = false;
+        });
+
+        // Navigation buttons
+        nextButton.addEventListener("click", function () {
+            nextSlide();
+            restartAutoSlide();
+        });
+
+        prevButton.addEventListener("click", function () {
+            previousSlide();
+            restartAutoSlide();
+        });
+
+        // Automatic movement
+        function startAutoSlide() {
+            clearInterval(autoSlide);
+
+            autoSlide = setInterval(function () {
+                nextSlide();
+            }, 2000);
+        }
+
+        function restartAutoSlide() {
+            startAutoSlide();
+        }
+
+        // Pause when the pointer is over this carousel
+        carousel.addEventListener("mouseenter", function () {
+            clearInterval(autoSlide);
+        });
+
+        carousel.addEventListener("mouseleave", function () {
+            startAutoSlide();
+        });
+
+        // Recalculate after resizing
+        window.addEventListener("resize", function () {
+            moveCarousel(false);
+        });
+
+        // Initialize this section
+        moveCarousel(false);
+        startAutoSlide();
+
+    });
+
+});
+
+
+

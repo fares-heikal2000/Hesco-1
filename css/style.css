@@ -81,6 +81,13 @@ p {
     color:#404040;
 
 }
+.pp{
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom:0;
+    color: black;
+}
 a{
 	color: #2a3855;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -2567,4 +2574,1755 @@ display: flex;
 
 #navbarNav{
     flex-grow: 0.05;
+}
+
+
+/* =========================================
+   OIL & GAS FILTER SECTION
+   All classes are unique to this section
+   ========================================= */
+
+.oilgas-filter-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.oilgas-filter-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* -----------------------------------------
+   Cards
+   ----------------------------------------- */
+
+.oilgas-filter-card {
+    position: relative;
+    width: 33.333333%;
+    height: 320px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    box-sizing: border-box;
+    margin-top: 90px;
+}
+
+
+/* -----------------------------------------
+   Background Images
+   ----------------------------------------- */
+
+.oilgas-filter-oil {
+    background-image: url("/images/11.jpeg");
+}
+
+.oilgas-filter-industry {
+    background-image: url("../images/22.jpeg");
+}
+
+.oilgas-filter-fuel {
+    background-image: url("../images/33.jpeg");
+}
+
+
+/* -----------------------------------------
+   Smooth Zoom Background
+   ----------------------------------------- */
+
+.oilgas-filter-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image: inherit;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    transform: scale(1);
+
+    transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    z-index: 0;
+}
+
+
+/* -----------------------------------------
+   Zoom In on Hover
+   ----------------------------------------- */
+
+.oilgas-filter-card:hover::before {
+    transform: scale(1.12);
+}
+
+
+/* -----------------------------------------
+   Dark / Transparent Overlay
+   ----------------------------------------- */
+
+.oilgas-filter-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    z-index: 1;
+
+    transition: background 0.6s ease;
+}
+
+
+/* -----------------------------------------
+   Content
+   ----------------------------------------- */
+
+.oilgas-filter-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+    max-width: 600px;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* -----------------------------------------
+   Titles
+   ----------------------------------------- */
+
+.oilgas-filter-content h2 {
+    margin: 0 0 12px 0;
+
+    color: #ffffff;
+
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 1.05;
+
+    letter-spacing: 0;
+
+    text-transform: uppercase;
+}
+
+
+/* -----------------------------------------
+   Description
+   ----------------------------------------- */
+
+.oilgas-filter-content p {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 400;
+
+    line-height: 1.35;
+}
+
+
+/* -----------------------------------------
+   Hover Effect
+   ----------------------------------------- */
+
+.oilgas-filter-card:hover .oilgas-filter-overlay {
+    background: rgba(0, 0, 0, 0.42);
+}
+
+.oilgas-filter-card:hover {
+    text-decoration: none;
+}
+
+
+/* -----------------------------------------
+   Responsive - Tablet
+   ----------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .oilgas-filter-container {
+        flex-wrap: wrap;
+    }
+
+    .oilgas-filter-card {
+        width: 100%;
+        height: 300px;
+    }
+
+    .oilgas-filter-content h2 {
+        font-size: 44px;
+    }
+
+    .oilgas-filter-content p {
+        font-size: 20px;
+    }
+}
+
+
+/* -----------------------------------------
+   Responsive - Mobile
+   ----------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .oilgas-filter-card {
+        height: 250px;
+    }
+
+    .oilgas-filter-content h2 {
+        font-size: 36px;
+    }
+
+    .oilgas-filter-content p {
+        font-size: 17px;
+    }
+}
+
+
+
+
+
+/* Applications Section */
+.applications-section {
+    width: 100%;
+    padding: 50px 0;
+    background: #ffffff;
+}
+
+/* Header */
+.section-header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 35px;
+    padding-top: 5px;
+}
+
+.section-header h2 {
+    margin: 0;
+    padding-top: 12px;
+    font-family: sans-serif;
+    font-size: 27px;
+    font-weight: 300;
+    color: #111111;
+}
+
+/* Grid */
+.applications-grid {
+    width: 88%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px 35px;
+}
+
+/* Card */
+.application-card {
+    text-align: center;
+    cursor: pointer;
+}
+
+#wastewater-grid .application-card:nth-child(1) {
+    transform: translateX(50%);
+}
+
+#wastewater-grid .application-card:nth-child(2) {
+    transform: translateX(50%);
+}
+
+/* Image */
+.application-image {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.application-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Image hover */
+.application-card:hover .application-image img {
+    transform: scale(1.05);
+}
+
+/* Title */
+.application-card h3 {
+    margin: 20px 0 0;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #111111;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 900px) {
+
+    .applications-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        width: 94%;
+    }
+
+    .application-image {
+        height: 180px;
+    }
+
+    .section-header h2 {
+        font-size: 25px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .applications-section {
+        padding: 15px 0 35px;
+    }
+
+    .section-header {
+        margin-bottom: 25px;
+    }
+
+    .section-header h2 {
+        font-size: 22px;
+    }
+
+    .applications-grid {
+        grid-template-columns: 1fr;
+        width: 90%;
+        gap: 30px;
+    }
+
+    .application-image {
+        height: 200px;
+    }
+
+    .application-card h3 {
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    #wastewater-grid .application-card:nth-child(1) {
+    transform: translateX(0%);
+}
+
+#wastewater-grid .application-card:nth-child(2) {
+    transform: translateX(0%);
+}
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optional: Offset if the destination page has a fixed header */
+#Cooling-Towers {
+    scroll-margin-top: 80px; /* Adjust height based on your header */
+}
+
+
+/* =========================================================
+   HESCO PRODUCTS PAGE
+========================================================= */
+
+.hesco-products-page {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+
+/* =========================================================
+   PRODUCT SECTION
+========================================================= */
+
+.hesco-product-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hesco-product-hero {
+    position: relative;
+
+    width: 100%;
+    height: 240px;
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* Dark overlay */
+
+.hesco-product-overlay {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba(0, 0, 0, 0.28);
+
+    z-index: 1;
+}
+
+
+/* Hero title */
+
+.hesco-product-hero h1 {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    padding: 0 25px;
+
+    color: #fff;
+
+    font-size: 40px;
+    font-weight: 300;
+
+    text-align: center;
+
+    line-height: 1.2;
+
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+
+/* =========================================================
+   CONTENT CONTAINER
+========================================================= */
+
+.hesco-product-container {
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 25px 20px 55px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.hesco-breadcrumb {
+    margin-bottom: 10px;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    color: #777;
+}
+
+
+/* Applications link */
+
+.hesco-breadcrumb a {
+    color: #58a93b;
+
+    text-decoration: none;
+
+    font-weight: 500;
+
+    transition: all 0.2s ease;
+}
+
+
+.hesco-breadcrumb a:hover {
+    color: #347d24;
+
+    text-decoration: underline;
+}
+
+
+/* Separator */
+
+.hesco-breadcrumb span {
+    color: #777;
+}
+
+
+/* =========================================================
+   PRODUCT TITLE
+========================================================= */
+
+.hesco-product-container h2 {
+    margin: 0 0 15px;
+
+    font-size: 23px;
+
+    line-height: 1.15;
+
+    font-weight: 400;
+
+    color: #111;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hesco-product-container > p {
+    margin: 0 0 22px;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   INFORMATION AREA
+========================================================= */
+
+.hesco-product-info {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   INFO BOX
+========================================================= */
+
+.hesco-info-box {
+    width: 100%;
+}
+
+
+.hesco-info-box h3 {
+    margin: 0 0 10px;
+
+    font-size: 22px;
+
+    line-height: 1.2;
+
+    font-weight: 400;
+
+    color: #111;
+}
+
+
+.hesco-info-box ul {
+    margin: 0;
+
+    padding-left: 19px;
+}
+
+
+.hesco-info-box li {
+    margin-bottom: 7px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   SEPARATOR BETWEEN PRODUCTS
+========================================================= */
+
+.hesco-product-section + .hesco-product-section {
+    border-top: 1px solid #e8e8e8;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .hesco-product-hero {
+        height: 200px;
+    }
+
+
+    .hesco-product-hero h1 {
+        font-size: 30px;
+
+        padding: 0 18px;
+    }
+
+
+    .hesco-product-container {
+        padding: 22px 18px 45px;
+    }
+
+
+    .hesco-product-container h2 {
+        font-size: 21px;
+    }
+
+
+    .hesco-product-container > p {
+        font-size: 12px;
+
+        line-height: 1.75;
+    }
+
+
+    .hesco-info-box h3 {
+        font-size: 21px;
+    }
+
+}
+
+/* =========================================================
+   OUR SUCCESS PARTNERS
+========================================================= */
+
+.success-partners {
+    width: 100%;
+    padding: 55px 0 60px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.success-partners-title {
+    margin: 0 0 55px;
+
+    text-align: center;
+
+    font-size: 25px;
+    font-weight: 400;
+
+    color: #111;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   CAROUSEL
+========================================================= */
+
+.partners-carousel {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================================
+   WINDOW
+========================================================= */
+
+.partners-window {
+    width: calc(100% - 150px);
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+.partners-track {
+    display: flex;
+
+    gap: 35px;
+
+    transition: transform 0.7s ease;
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   PARTNER CARD
+========================================================= */
+
+.partner-card {
+    flex: 0 0 calc((100% - 140px) / 5);
+
+    min-width: 0;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LOGO AREA
+========================================================= */
+
+.partner-logo {
+    width: 100%;
+
+    height: 145px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   LOGO IMAGE
+========================================================= */
+
+.partner-logo img {
+    display: block;
+
+    max-width: 180px;
+    max-height: 100px;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Slight hover effect */
+
+.partner-card:hover .partner-logo img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   COMPANY NAME
+========================================================= */
+
+.partner-name {
+    font-size: 17px;
+
+    font-weight: 400;
+
+    line-height: 1.35;
+
+    color: #222;
+
+    min-height: 24px;
+}
+
+
+/* =========================================================
+   ARROWS
+========================================================= */
+
+.partners-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f1f4f5;
+
+    color: #17232d;
+
+    font-size: 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition: all 0.25s ease;
+}
+
+
+.partners-arrow:hover {
+    background: #e5eaec;
+
+    transform: translateY(-50%) scale(1.05);
+}
+
+
+.partners-prev {
+    left: 35px;
+}
+
+
+.partners-next {
+    right: 35px;
+}
+
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.partners-dots {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 55px;
+}
+
+
+.partner-dot {
+    width: 10px;
+    height: 10px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #d9dee2;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+.partner-dot.active {
+    width: 11px;
+    height: 11px;
+
+    background: #36a948;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .partners-window {
+        width: calc(100% - 120px);
+    }
+
+    .partners-track {
+        gap: 25px;
+    }
+
+    .partner-card {
+        flex: 0 0 calc((100% - 100px) / 5);
+    }
+
+    .partner-logo {
+        height: 120px;
+    }
+
+    .partner-logo img {
+        max-width: 145px;
+        max-height: 85px;
+    }
+
+    .partner-name {
+        font-size: 15px;
+    }
+
+    .partners-prev {
+        left: 20px;
+    }
+
+    .partners-next {
+        right: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .success-partners {
+        padding: 40px 0 45px;
+    }
+
+    .success-partners-title {
+        font-size: 23px;
+
+        margin-bottom: 35px;
+    }
+
+    .partners-window {
+        width: calc(100% - 90px);
+    }
+
+    .partners-track {
+        gap: 18px;
+    }
+
+    .partner-card {
+        flex: 0 0 calc((100% - 18px) / 2);
+    }
+
+    .partner-logo {
+        height: 100px;
+
+        margin-bottom: 12px;
+    }
+
+    .partner-logo img {
+        max-width: 125px;
+        max-height: 70px;
+    }
+
+    .partner-name {
+        font-size: 14px;
+    }
+
+    .partners-arrow {
+        width: 36px;
+        height: 36px;
+
+        font-size: 20px;
+    }
+
+    .partners-prev {
+        left: 10px;
+    }
+
+    .partners-next {
+        right: 10px;
+    }
+
+    .partners-dots {
+        margin-top: 35px;
+
+        gap: 9px;
+    }
+
+    .partner-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .partner-dot.active {
+        width: 9px;
+        height: 9px;
+    }
+}
+
+/* =========================================================
+   HESCO SERVICES
+   COMPLETE CSS
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+.hesco-services {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #555;
+    background: #fff;
+}
+
+
+/* =========================================================
+   SERVICE SECTION
+========================================================= */
+
+.hesco-services .service-section {
+    width: 100%;
+    padding: 55px 0;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.hesco-services .service-section:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   SERVICE HEADING
+========================================================= */
+
+.hesco-services .service-heading {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 35px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.hesco-services .service-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 55px;
+    height: 55px;
+
+    flex: 0 0 55px;
+
+    background: #eeeeee;
+
+    color: #555;
+
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.hesco-services .service-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #888;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.hesco-services .service-heading h2 {
+    margin: 0;
+
+    color: #333;
+
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+
+/* =========================================================
+   MAIN TWO COLUMN GRID
+========================================================= */
+
+.hesco-services .service-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 45px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.hesco-services .service-main-content,
+.hesco-services .service-side-content {
+    min-width: 0;
+}
+
+.hesco-services p {
+    margin: 0 0 18px;
+
+    color: #666;
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.hesco-services h3 {
+    margin: 0 0 15px;
+
+    color: #333;
+
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.hesco-services h4 {
+    margin: 0 0 10px;
+
+    color: #444;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   LISTS
+========================================================= */
+
+.hesco-services .service-list {
+    margin: 0 0 25px;
+    padding-left: 20px;
+}
+
+.hesco-services .service-list li {
+    margin-bottom: 8px;
+
+    color: #666;
+
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.hesco-services .service-list.numbered {
+    padding-left: 22px;
+}
+
+
+/* =========================================================
+   TABLE SECTION
+========================================================= */
+
+.hesco-services .service-table-section {
+    width: 100%;
+    margin-top: 35px;
+}
+
+.hesco-services .service-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid #d8d8d8;
+}
+
+.hesco-services .service-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 650px;
+}
+
+.hesco-services .service-table th {
+    padding: 14px 15px;
+
+    background: #eeeeee;
+
+    border-right: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d0d0d0;
+
+    color: #444;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    text-align: left;
+}
+
+.hesco-services .service-table td {
+    padding: 13px 15px;
+
+    border-right: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+
+    color: #666;
+
+    font-size: 11px;
+    line-height: 1.55;
+
+    vertical-align: top;
+}
+
+.hesco-services .service-table tr:last-child td {
+    border-bottom: none;
+}
+
+.hesco-services .service-table th:last-child,
+.hesco-services .service-table td:last-child {
+    border-right: none;
+}
+
+.hesco-services .service-table tbody tr:nth-child(even) td {
+    background: #fafafa;
+}
+
+
+/* =========================================================
+   SCOPE
+========================================================= */
+
+.hesco-services .service-scope {
+    margin-top: 35px;
+    padding: 28px;
+
+    background: #f3f3f3;
+
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+}
+
+.hesco-services .scope-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1px;
+
+    background: #d5d5d5;
+
+    border: 1px solid #d5d5d5;
+}
+
+.hesco-services .scope-grid > div {
+    padding: 13px 15px;
+
+    background: #fff;
+
+    color: #555;
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PROCESS LIST
+========================================================= */
+
+.hesco-services .process-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    border-top: 1px solid #ddd;
+}
+
+.hesco-services .process-item {
+    display: flex;
+
+    gap: 15px;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.hesco-services .process-item > span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    flex: 0 0 34px;
+
+    background: #eeeeee;
+
+    color: #555;
+
+    font-size: 10px;
+}
+
+.hesco-services .process-item strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #444;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.hesco-services .process-item p {
+    margin: 0;
+
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FLOW PROCESS
+========================================================= */
+
+.hesco-services .flow-process {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 7px;
+
+    width: 100%;
+
+    padding: 20px;
+
+    background: #f4f4f4;
+
+    border: 1px solid #ddd;
+}
+
+.hesco-services .flow-process span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 35px;
+
+    padding: 8px 12px;
+
+    background: #fff;
+
+    border: 1px solid #d4d4d4;
+
+    color: #555;
+
+    font-size: 10px;
+    line-height: 1.4;
+
+    text-align: center;
+}
+
+.hesco-services .flow-process b {
+    color: #999;
+
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.hesco-services .flow-process.compact {
+    margin: 15px 0;
+
+    padding: 15px;
+}
+
+
+/* =========================================================
+   COMPONENT GRID
+========================================================= */
+
+.hesco-services .component-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1px;
+
+    background: #d7d7d7;
+
+    border: 1px solid #d7d7d7;
+}
+
+.hesco-services .component-grid > div {
+    padding: 14px 16px;
+
+    background: #f8f8f8;
+
+    color: #555;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   TECHNOLOGY BOX
+========================================================= */
+
+.hesco-services .technology-box {
+    margin-bottom: 18px;
+
+    padding: 18px;
+
+    background: #f5f5f5;
+
+    border-left: 3px solid #999;
+}
+
+.hesco-services .technology-box .service-list {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   OPERATION & MAINTENANCE
+========================================================= */
+
+.hesco-services .om-model {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-bottom: 30px;
+}
+
+.hesco-services .om-model span {
+    padding: 9px 11px;
+
+    background: #eeeeee;
+
+    border: 1px solid #d8d8d8;
+
+    color: #555;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   BRAND LIST
+========================================================= */
+
+.hesco-services .brand-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+}
+
+.hesco-services .brand-list span {
+    display: inline-block;
+
+    padding: 8px 10px;
+
+    background: #f1f1f1;
+
+    border: 1px solid #ddd;
+
+    color: #555;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   PARAMETER GRID
+========================================================= */
+
+.hesco-services .parameter-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    background: #d7d7d7;
+
+    border: 1px solid #d7d7d7;
+}
+
+.hesco-services .parameter-grid li {
+    padding: 11px 12px;
+
+    background: #f7f7f7;
+
+    color: #555;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   SECTION DESCRIPTION
+========================================================= */
+
+.hesco-services .section-description {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   SOFTENER TYPES
+========================================================= */
+
+.hesco-services .softener-types {
+    margin-top: 40px;
+}
+
+
+/* =========================================================
+   SERVICE NOTE
+========================================================= */
+
+.hesco-services .service-note {
+    margin-top: 35px;
+
+    padding: 25px 28px;
+
+    background: #f5f5f5;
+
+    border-left: 3px solid #999;
+}
+
+.hesco-services .service-note h3 {
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.hesco-services .service-cta {
+    margin-top: 35px;
+
+    padding: 35px 25px;
+
+    background: #f2f2f2;
+
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+
+    text-align: center;
+}
+
+.hesco-services .service-cta h3 {
+    margin-bottom: 10px;
+
+    font-size: 20px;
+}
+
+.hesco-services .service-cta p {
+    max-width: 700px;
+
+    margin: 0 auto 20px;
+}
+
+.hesco-services .service-cta-button {
+    display: inline-block;
+
+    padding: 11px 22px;
+
+    background: #fff;
+
+    border: 1px solid #777;
+
+    color: #444;
+
+    font-size: 11px;
+
+    text-decoration: none;
+
+    transition: all 0.25s ease;
+}
+
+.hesco-services .service-cta-button:hover {
+    background: #444;
+
+    border-color: #444;
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .hesco-services .service-section {
+        padding: 40px 15px;
+    }
+
+    .hesco-services .service-grid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .hesco-services .scope-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hesco-services .component-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hesco-services .parameter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hesco-services .service-heading h2 {
+        font-size: 23px;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .hesco-services .service-section {
+        padding: 35px 12px;
+    }
+
+    .hesco-services .service-heading {
+        gap: 14px;
+
+        margin-bottom: 25px;
+    }
+
+    .hesco-services .service-number {
+        width: 45px;
+        height: 45px;
+
+        flex-basis: 45px;
+
+        font-size: 14px;
+    }
+
+    .hesco-services .service-heading h2 {
+        font-size: 20px;
+    }
+
+    .hesco-services .scope-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hesco-services .component-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hesco-services .parameter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hesco-services .flow-process {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .hesco-services .flow-process span {
+        width: 100%;
+    }
+
+    .hesco-services .flow-process b {
+        display: block;
+
+        text-align: center;
+
+        transform: rotate(90deg);
+    }
+
+    .hesco-services .flow-process.compact {
+        flex-direction: column;
+    }
+
+    .hesco-services .service-table-wrapper {
+        overflow-x: auto;
+    }
+
 }
