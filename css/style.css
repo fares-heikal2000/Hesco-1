@@ -2577,6 +2577,52 @@ display: flex;
 }
 
 
+/* Cooling Tower - Centered and Responsive */
+#cooling-tower-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#cooling-tower-grid > a {
+    display: block;
+    width: 100%;
+    max-width: 355px;
+}
+
+#cooling-tower-grid .application-card {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#cooling-tower-grid .application-image {
+    width: 100%;
+}
+
+#cooling-tower-grid .application-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    #cooling-tower-grid > a {
+        max-width: 90%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    #cooling-tower-grid > a {
+        max-width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+}
+
 /* =========================================
    OIL & GAS FILTER SECTION
    All classes are unique to this section
