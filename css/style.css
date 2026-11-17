@@ -454,7 +454,7 @@ i {
   }
   
   .navbar-brand img{
-	  height: 73px;
+	  height: 35px;
       width: 125px;
       padding-right: 35px;
   }
@@ -2606,15 +2606,11 @@ display: flex;
     position: relative;
     width: 33.333333%;
     height: 320px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     overflow: hidden;
-
     text-decoration: none;
-
     box-sizing: border-box;
     margin-top: 90px;
 }
@@ -2623,19 +2619,15 @@ display: flex;
 /* -----------------------------------------
    Background Images
    ----------------------------------------- */
-
 .oilgas-filter-oil {
     background-image: url("../images/11.jpeg");
-}
-
+} 
 .oilgas-filter-industry {
     background-image: url("../images/22.jpeg");
 }
-
 .oilgas-filter-fuel {
     background-image: url("../images/33.jpeg");
 }
-
 
 /* -----------------------------------------
    Smooth Zoom Background
@@ -2643,19 +2635,14 @@ display: flex;
 
 .oilgas-filter-card::before {
     content: "";
-
     position: absolute;
     inset: 0;
-
     background-image: inherit;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
     transform: scale(1);
-
     transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
     z-index: 0;
 }
 
@@ -2848,6 +2835,7 @@ display: flex;
 #wastewater-grid .application-card:nth-child(2) {
     transform: translateX(50%);
 }
+
 
 /* Image */
 .application-image {
