@@ -336,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-console.log("SEND FUNCTION STARTED");
+console.log("SEND FUNCTION STARTED2");
 
 
 function sendMail(){
@@ -348,5 +348,8 @@ function sendMail(){
     }
     emailjs.send("service_6278eiz","template_yhtqoqo",parms).then(alert("Your email has sent"))
 }
+
+
+console.log("SEND FUNCTION STARTED3");
 
 
