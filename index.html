@@ -30,6 +30,17 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- Paradise Slider Main Style Sheet -->
     <link href="css/full_width_animated_layers_002.css" rel="stylesheet" media="all">
+	    <!-- EnailJs outlook extension -->
+	<script type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js">
+	</script>
+	<script type="text/javascript">
+	(function(){
+		emailjs.init({
+			publicKey: "F66RZA1As99YkhKP-",
+		});
+	})();
+	</script>
 </head>
 <body>
 		<!-- *****Main Wrapper***** -->
@@ -257,14 +268,19 @@
 						<div class="col-md-7">
 							<div class="contact-form mb-30-sm pt-0-sm">
 								<h3 class="mb-5">Get in Touch</h3>
-								<form method="post">
-							        <input type='text' id='name' placeholder='Enter name'>
-							        <input type='email' id='email' placeholder='Enter email'>
-							        <input type='text' id="subject" placeholder="Subject...">
-							        <textarea  id="message" rows="30" placeholder="Message..."></textarea>
-									<button class="btn btn-outline-info blue bg-warning mt-5" id="btn0"><a href="mailto:Info@hesco-eg.com">Submit</a></button>
+								<form class="form-row form-group">
+							        <input type="text" class="form-control" id="inputEmail4" placeholder="Name">
+							        <input type="email" class="form-control" id="inputPassword4" placeholder="Email">
+							        <input type="text" class="form-control" id="inputAddress" placeholder="Subject...">
+							        <textarea name="message" placeholder="Message" id="inputmassage"></textarea>
+									<button class="btn btn-outline-info blue bg-warning mt-5" type="submit" onclick="sendMail()" >Submit</button>
 							    </form>
 							</div>
+							
+
+							<!-- ? -->
+							<!--  -->
+
 						</div>
 						<div class="col-md-5">
 							<div class="contact-detail">

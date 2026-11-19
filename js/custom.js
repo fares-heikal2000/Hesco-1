@@ -339,3 +339,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+function sendMail(){
+    let parms = {
+        name : document.getElementById("inputEmail4").value,
+        email : document.getElementById("inputPassword4").value,
+        subject : document.getElementById("inputAddress").value,
+        massage : document.getElementById("inputmassage").value,
+    }
+    emailjs.send("service_6278eiz","template_yhtqoqo",parms).then(alert("Your email has sent"))
+}
+
+
