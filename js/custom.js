@@ -336,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
+console.log("SEND FUNCTION STARTED");
 
 
 function sendMail(){
